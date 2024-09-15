@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style4.css">
+    <script>
+        // Helper function for consistent alerts
+        function showAlert(message, fieldId) {
+            alert(message);
+            document.getElementById(fieldId).focus();
+            return false;
+        }
+
+        function validateForm() {
+            let name = document.getElementById("name").value;
+            let phone = document.getElementById("phno").value;
+            let address = document.getElementById("address").value;
+            let doorno = document.getElementById("doorno").value;
+            let street = document.getElementById("stname").value;
+            let city = document.getElementById("city").value;
+            let pin = document.getElementById("pin").value;
+
+            // Name validation
+            if (name === "") {
+                return showAlert("Name must be filled out", "name");
+            }
+
+            // Phone number validation (should be 10 digits)
+            if (phone === "" || !/^\d{10}$/.test(phone)) {
+                return showAlert("Please enter a valid 10-digit phone number", "phno");
+            }
+
+            // Address validation
+            if (address === "") {
+                return showAlert("Address must be filled out", "address");
+            }
+
+            // Door no validation
+            if (doorno === "") {
+                return showAlert("Door number must be filled out", "doorno");
+            }
+
+            // Street name validation
+            if (street === "") {
+                return showAlert("Street name must be filled out", "stname");
+            }
+
+            // City validation
+            if (city === "") {
+                return showAlert("City must be filled out", "city");
+            }
+
+            // Pincode validation (should be 6 digits)
+            if (pin === "" || !/^\d{6}$/.test(pin)) {
+                return showAlert("Please enter a valid 6-digit pincode", "pin");
+            }
+
+            // Delivery method validation
+            if (!document.querySelector('input[name="d1"]:checked')) {
+                alert("Please select a delivery method");
+                return false;
+            }
+
+            // Appliance validation (at least one checkbox must be checked)
+            if (!document.querySelector('input[name="a1"]:checked') &&
+                !document.querySelector('input[name="a2"]:checked') &&
+                !document.querySelector('input[name="a3"]:checked') &&
+                !document.querySelector('input[name="a4"]:checked')) {
+                alert("Please select at least one appliance");
+                return false;
+            }
+
+            // Brand validation (one radio must be checked)
+            if (!document.querySelector('input[name="b1"]:checked') &&
+                !document.querySelector('input[name="b2"]:checked') &&
+                !document.querySelector('input[name="b3"]:checked') &&
+                !document.querySelector('input[name="b4"]:checked') &&
+                !document.querySelector('input[name="b5"]:checked')) {
+                alert("Please select a brand");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body style="font-size: 20px;">
+    <form onsubmit="return validateForm()">
+        <h3 style="text-align: center;">HOME APPLIANCE FORM</h3>
+        <img src="img2.jpeg" align="right" height="550" width="550">
+        <p style="font-size: 20px;"><b>Personal Details</b></p>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="phno">Phone number:</label><br>
+        <input type="text" id="phno" name="phno"><br>
+        <label for="address">Address:</label><br>
+        <input type="text" id="address" name="address"><br>
+        <input type="radio" id="home" name="address" value="Home">
+        <label for="home">Home</label>
+        <input type="radio" id="work" name="address" value="Work">
+        <label for="work">Work</label><br>
+        <p style="font-size: 20px;"><b>Delivery Details</b></p>
+        <input type="radio" id="d1" name="d1" value="Home Delivery">
+        <label for="d1">Home Delivery</label>
+        <input type="radio" id="d2" name="d1" value="In-Person">
+        <label for="d2">In-Person</label><br><br>
+        <label for="doorno">Door no:</label><br>
+        <input type="text" id="doorno" name="doorno"><br>
+        <label for="stname">Street name:</label><br>
+        <input type="text" id="stname" name="stname"><br>
+        <label for="city">City:</label><br>
+        <input type="text" id="city" name="city"><br>
+        <label for="pin">Pincode:</label><br>
+        <input type="text" id="pin" name="pin"><br><br>
+        <p style="font-size: 20px;"><b>Choose your preferred appliance</b></p>
+        <input type="checkbox" id="a1" name="a1" value="AC">
+        <label for="a1">AC</label><br>
+        <input type="checkbox" id="a2" name="a2" value="Refrigerator">
+        <label for="a2">Refrigerator</label><br>
+        <input type="checkbox" id="a3" name="a3" value="Mixer">
+        <label for="a3">Mixer</label><br>
+        <input type="checkbox" id="a4" name="a4" value="Television">
+        <label for="a4">Television</label><br>
+        <p style="font-size: 20px;"><b>Brand</b></p>
+        <input type="radio" id="b1" name="b1" value="Samsung">
+        <label for="b1">Samsung</label><br>
+        <input type="radio" id="b2" name="b1" value="Whirlpool">
+        <label for="b2">Whirlpool</label><br>
+        <input type="radio" id="b3" name="b1" value="LG">
+        <label for="b3">LG</label><br>
+        <input type="radio" id="b4" name="b1" value="Sony">
+        <label for="b4">Sony</label><br>
+        <input type="radio" id="b5" name="b1" value="MI">
+        <label for="b5">MI</label><br><br>
+        <footer style="text-align: center;">
+        <input type="submit" value="Submit" class="button" >
+        </footer>
+    </form>
+</body>
+</html>

@@ -1,0 +1,11 @@
+body{
+    background-color:rgb(187, 187, 177);
+
+}
+
+.button{
+    border: 0.2cm solid rgb(78, 78, 84);    
+    background-color: rgb(161, 153, 153); 
+    color: black; 
+    font-size: 20px;   
+}
