@@ -6,7 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="style4.css">
     <script>
-        // Helper function for consistent alerts
+        
         function showAlert(message, fieldId) {
             alert(message);
             document.getElementById(fieldId).focus();
@@ -22,48 +22,48 @@
             let city = document.getElementById("city").value;
             let pin = document.getElementById("pin").value;
 
-            // Name validation
+            
             if (name === "") {
                 return showAlert("Name must be filled out", "name");
             }
 
-            // Phone number validation (should be 10 digits)
+            
             if (phone === "" || !/^\d{10}$/.test(phone)) {
                 return showAlert("Please enter a valid 10-digit phone number", "phno");
             }
 
-            // Address validation
+           
             if (address === "") {
                 return showAlert("Address must be filled out", "address");
             }
 
-            // Door no validation
+            
             if (doorno === "") {
                 return showAlert("Door number must be filled out", "doorno");
             }
 
-            // Street name validation
+           
             if (street === "") {
                 return showAlert("Street name must be filled out", "stname");
             }
 
-            // City validation
+            
             if (city === "") {
                 return showAlert("City must be filled out", "city");
             }
 
-            // Pincode validation (should be 6 digits)
+           
             if (pin === "" || !/^\d{6}$/.test(pin)) {
                 return showAlert("Please enter a valid 6-digit pincode", "pin");
             }
 
-            // Delivery method validation
+            
             if (!document.querySelector('input[name="d1"]:checked')) {
                 alert("Please select a delivery method");
                 return false;
             }
 
-            // Appliance validation (at least one checkbox must be checked)
+           
             if (!document.querySelector('input[name="a1"]:checked') &&
                 !document.querySelector('input[name="a2"]:checked') &&
                 !document.querySelector('input[name="a3"]:checked') &&
@@ -72,7 +72,7 @@
                 return false;
             }
 
-            // Brand validation (one radio must be checked)
+           
             if (!document.querySelector('input[name="b1"]:checked') &&
                 !document.querySelector('input[name="b2"]:checked') &&
                 !document.querySelector('input[name="b3"]:checked') &&
