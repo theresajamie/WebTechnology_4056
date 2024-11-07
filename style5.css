@@ -1,0 +1,52 @@
+#time {
+    font-size: 2em;
+    margin-top: 20px;
+    color:rgb(177, 210, 239);
+}
+#hoverText {
+    text-align: center;
+    background-color:aliceblue;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 20px;
+    color:rgb(148, 192, 230);
+}
+body{
+    background-color:rgb(103, 127, 148);
+}
+.container {
+    position: relative;
+    width: 100%; /* Full width */
+    max-width: 300px; /* Max width */
+    margin: auto; /* Center container */
+    overflow: hidden;
+}
+
+.image {
+    width: 100%;
+    object-fit: cover; /* Cover the container */
+    transition: transform 0.3s ease;
+}
+
+.text {
+    position: absolute;
+    top: 50%; /* Start in the middle of the image */
+    left: 50%; 
+    transform: translate(-50%, -50%); /* Center it */
+    color:rgb(210, 231, 249);
+    text-align: center;
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.3s ease, top 0.3s ease; /* Smooth transition */
+}
+
+.container:hover .image {
+    transform: translateY(30px);
+}
+
+.container:hover .text {
+    top: 15px; /* Move text into view */
+    opacity: 1; /* Fade in */
+}
+body{
+  margin:300px;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Time</title>
+    <link rel="stylesheet" href="style5.css">
+</head>
+<body>
+    <button id="showTimeButton">Show Current Time</button>
+    <div id="time"></div>
+
+    <script>
+        let interval;
+
+        document.getElementById('showTimeButton').addEventListener('click', function() {
+            // Clear any existing interval
+            clearInterval(interval);
+
+            // Update time immediately
+            updateTime();
+
+            // Start interval to update every second
+            interval = setInterval(updateTime, 1000);
+        });
+
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString();
+            document.getElementById('time').textContent = timeString;
+        }
+    </script>
+    <div id="hoverText">Hello</div>
+
+    <script>
+        const hoverText = document.getElementById('hoverText');
+    
+        hoverText.addEventListener('mouseenter', () => {
+            hoverText.textContent = 'Mouse In';
+        });
+    
+        hoverText.addEventListener('mouseleave', () => {
+            hoverText.textContent = 'Mouse Out';
+        });
+    </script>
+    <div class="container">
+        <img src="Dishwasher.webp" alt="Dishwasher" class="image">
+        <div class="text">This is a Dishwasher!</div>
+    </div>
+</body>
+</html>
