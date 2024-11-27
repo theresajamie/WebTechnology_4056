@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Appliance Database</title>
+</head>
+<body>
+    <h1>Home Appliance Database</h1>
+    <hr>    
+
+    <!-- Link to display all appliances -->
+    <a href="http://localhost:8080/HA/ApplianceDatabaseServlet">Display all appliances</a>
+    <hr>
+
+    <!-- Form to view appliance details by category -->
+    <h3>View Appliance Details by Category</h3>
+    <form action="http://localhost:8080/HA/ApplianceDatabaseServlet2" method="get">
+        <!-- Drop down selection -->
+        <label for="appliance">Appliance</label>
+        <select id="appliance" name="appliance">
+            <option value="empty">--</option>
+            <option value="Refrigerator">Refrigerator</option>
+            <option value="Microwave">Microwave</option>
+            <option value="Washing Machine">Washing Machine</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Submit"/>
+    </form>
+    <hr>
+
+    <!-- Form to insert appliance data into the database -->
+    <h2>Insert Appliance Data into DB</h2>
+    <form action="http://localhost:8080/HA/ApplianceDatabaseServlet3" method="post">
+        <p>Appliance ID:</p> 
+        <input type="text" name="applianceid" required/>
+        <p>Appliance Name:</p> 
+        <input type="text" name="appliancename" required/>
+        <p>Power Consumption (Watts):</p> 
+        <input type="number" name="powerconsumption" required/>
+        <br/><br/>
+        <input type="submit" value="Submit"/>
+    </form>
+</body>
+</html>
