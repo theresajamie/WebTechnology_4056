@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fa; /* Light grey for a clean tech look */
+    color: #2c3e50; /* Darker grey-blue for text */
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #2980b9; /* Vibrant blue for a professional, tech vibe */
+    text-align: center;
+    margin-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    max-width: 800px;
+    margin: 20px auto; /* Center the list on the page */
+}
+
+li {
+    background: #ffffff;
+    margin: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid #2980b9; /* Accent color for appliances */
+}
+
+li:hover {
+    background: #ecf0f1; /* Subtle hover effect */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    transition: background 0.3s, box-shadow 0.3s;
+}
